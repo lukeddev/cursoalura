@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root { /* Aqui estamos criando variáveis, que são valores que podemos usar por todo o projeto, equando for necessário alterar, podemos alterar só aqui e ele vai considerar para todos os locais utilizados, isso é muito usado para alterar as cores dos sites nesse caso temos uma variavel global, que a tag é root*/
+  --cor-primaria: #AF1B3F;
+  --cor-secundaria: #EFC69B;
+  --cor-terciaria: #473144;
+  --cor-hover: #861834;
+
+  --fonte-primaria: 'Krona One', sans-serif;
+  --fonte-secundaria: 'montserrat', sans-serif;
+}
+
+* { /* esse simbolo é usado para aplicar um estilo em todos os elementos da pagina, aqui estamos resetando a pagina para que não tenhamos interferencias de estilos que já vem com os navegadores */
+  margin: 0;
+  padding: 0;
+}
+
+.curriculo__main {
+  padding: 2% 29% 2% 29%;
+  text-align: justify;
+}
+
+.curriculo__main p {
+  padding: 2% 0%;
+}
+
+body {
+ /* height: 100vh; essa é um tipo de tag padrão, se utiliza para que a box size do body pegue sempre 100% da view port, ou seja, da tela */
+  box-sizing: border-box; /* Aqui também é uma tag padrão, aqui estamos garantindo que o conteudo do box esteja sempre dentro da box, digamos que o filho sempre dentro do pai */
+  background-color: var(--cor-primaria); /* aqui é onde estilizando o background */
+  color: var(--cor-secundaria); /* aqui é onde estilizamos as fontes, ao colocar formatos de cores difeerentes, é precico colocar #*/
+
+}
+
+.cabecalho {
+  padding: 2% 0% 0% 29%;
+}
+
+.cabecalho__menu {
+  display: flex;
+  gap: 80px;
+}
+
+.cabecalho__menu__link {
+  font-family: var(--fonte-secundaria);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-terciaria);
+  text-decoration: none;
+}
+
+.apresentacao {
+  padding: 2% 15%;
+  align-items: center;
+  display: flex; /* Aqui estamos falando pra classe apresentacao que os filhos dentro dele devem ser "flex" isso quer dizer: ficar ao lado do outro. mas isso é alterável, se vai ficar linha ou de outra forma*/ 
+  justify-content: center; /*o justify content justamente justifica a distancia entre os elementos, nessa configuração ele usa o tamanho de toda a tela*/
+  gap: 82px;
+}
+
+.apresentacao__conteudo { /*o flex é sempre colocado dentro da tag conteiner do elemento*/
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /*A propriedade gap não é exclusiva do Flexbox, porém é utilizada quase sempre em conjunto com ele. Ela especifica no CSS o tamanho dos espaços entre linhas e colunas em layouts de grid, flex e multi-column. Sua sintaxe é bem simples e ela aceita um ou dois valores.*/
+}
+
+.apresentacao__conteudo__titulo {
+  font-size: 2.25rem;
+  font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque { /* para selecionar uma classe no css e dar um estilo para ela, é necessário usar o "." */
+  color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+  font-size: 1.5rem;
+  font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* isso aqui é tudo propriedade do flex box, é importante estudar esse item*/
+  gap: 32px; /* isso aqui é tudo propriedade do flex box, é importante estudar esse item*/
+}
+
+.apresentacao__link__subtitulo {
+  font-family: var(--fonte-primaria);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.apresentacao__links__navegacao { /*aqui estamos editando o botão, deixando ele mais bonito, nota-se que essa classe foi colocado bem dentro do atributo "a" do html */
+  /* background-color: #CCB69B; */ /* se você apertar control+k+c você comenta automaticamente tudo que tiver selecionado*/
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 50%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  padding: 20px 0;
+  text-decoration: none; /*aqui estamos tirando a decoração que vem padrão do html nos links*/
+  color: var(--cor-secundaria);
+  font-family: var(--fonte-secundaria);
+  font-weight: 600;
+  border: 4px solid #473144;
+}
+
+.apresentacao__links__navegacao:hover {
+  background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+  width: 50%;
+}
+
+.rodape {
+  color: var(--cor-secundaria);
+  background-color: var(--cor-terciaria);
+  padding: 24px;
+  text-align: center;
+  font-family: var(--fonte-secundaria);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+  .cabecalho {
+    padding: 10%;
+  }
+
+  .cabecalho__menu {
+    justify-content: center;
+  }
+
+  .apresentacao {
+    flex-direction: column-reverse;
+    padding: 5%;
+  }
+  .apresentacao__conteudo {
+    width: auto;
+  }
+}
